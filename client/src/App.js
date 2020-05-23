@@ -5,6 +5,9 @@ import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Alert from './components/layout/Alert';
+import PrivateRoute from './components/routing/PrivateRoute';
+import Questions from './components/questions/Questions';
+import Question from './components/question/Question';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 import './App.css';
@@ -33,6 +36,8 @@ const App = () => {
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              <PrivateRoute exact path='/questions' component={Questions} />
+              <PrivateRoute exact path='/questions/:id' component={Question} />
             </Switch>
           </section>
         </Fragment>
